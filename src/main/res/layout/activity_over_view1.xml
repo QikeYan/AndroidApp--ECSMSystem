@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0097A7"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#0097A7"
+        android:layout_height="35dp">
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/back_white"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:layout_centerInParent="true"
+            android:text="Consumption Overview"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#CFCFCF"/>
+    <com.test.myapplication.custom.histogramview.views.HistogramView
+        android:id="@+id/histogram"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:date_text_color="@android:color/white"
+        app:date_text_size="12sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        app:histogram_color="@android:color/white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:textColor="@android:color/white"
+                android:text="@string/description"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center_vertical|right"
+                android:maxLength="20"/>
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center_vertical|left"
+                android:text="@string/date"/>
+
+            <TextView
+                android:id="@+id/text_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center_vertical|right"
+                android:maxLength="20"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:textColor="@android:color/white"
+                android:text="@string/electricity_consunption"/>
+
+            <TextView
+                android:id="@+id/text_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center_vertical|right"
+                android:maxLength="20"/>
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center_vertical|left"
+                android:text="里程(千米)"/>
+
+            <TextView
+                android:id="@+id/text_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center_vertical|right"
+                android:maxLength="20"/>
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center_vertical|left"
+                android:text="消耗(卡)"/>
+
+            <TextView
+                android:id="@+id/text_calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center_vertical|right"
+                android:maxLength="20"/>
+
+        </FrameLayout>
+
+        <RadioGroup
+            android:id="@+id/time_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/radio_today_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/radio_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/today"
+                android:layout_marginLeft="10dp"
+                android:textColor="@android:color/white"
+                android:textSize="13.299988sp"/>
+            <RadioButton
+                android:id="@+id/radio_week_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/radio_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/week"
+                android:layout_marginLeft="10dp"
+                android:textColor="@android:color/white"
+                android:textSize="13.299988sp"/>
+
+            <RadioButton
+                android:id="@+id/radio_month_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/radio_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:text="@string/month"
+                android:textColor="@android:color/white"
+                android:textSize="13.299988sp"/>
+            <RadioButton
+                android:id="@+id/radio_year_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/radio_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:text="@string/year"
+                android:textColor="@android:color/white"
+                android:textSize="13.299988sp"/>
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+</LinearLayout>
